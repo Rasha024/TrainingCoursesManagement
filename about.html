@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Training Courses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Training Courses Management System</h1>
+        <p>Learn Today, Lead Tomorrow</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- About Us -->
+        <section>
+            <h2>About Us</h2>
+
+            <!-- Image with image map -->
+            <img src="images/home.jpg" alt="Training Courses - click to open About Us"
+                 class="map-img" width="400" height="250" usemap="#aboutMap">
+            <map name="aboutMap">
+                <area shape="rect" coords="0,0,400,250" href="about.html" alt="About Us">
+            </map>
+
+            <p>
+                Welcome to the Training Courses Management System.
+                Our website provides educational courses to help students
+                improve their programming and computer science skills.
+            </p>
+        </section>
+
+        <!-- Our Mission -->
+        <section>
+            <h2>Our Mission</h2>
+            <p>
+                Our mission is to make learning easier and provide
+                useful educational resources for everyone.
+            </p>
+        </section>
+
+        <!-- Our Team -->
+        <section>
+            <h2>Our Team</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lina Alharbi</td>
+                        <td>Front-end Developer</td>
+                    </tr>
+                    <tr>
+                        <td>Rasha Almotairi</td>
+                        <td>JavaScript Developer</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- What We Offer -->
+        <section>
+            <h2>What We Offer</h2>
+            <ul>
+                <li>Java Programming</li>
+                <li>Python Programming</li>
+                <li>Database Management</li>
+                <li>Software Engineering</li>
+            </ul>
+        </section>
+
+        <!-- Contact Information -->
+        <section>
+            <h2>Contact Us</h2>
+            <p>Email: info@trainingcourses.com</p>
+            <p>Phone: 0500000000</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Training Courses Management System</p>
+        <p>All Rights Reserved &copy; 2026</p>
+        <p>Today: <span id="todayDate"></span></p>
+    </footer>
+
+    <!-- Embedded script: shows today's date in the footer -->
+    <script>
+        const currentDate = new Date();
+        document.getElementById("todayDate").textContent = currentDate.toDateString();
+    </script>
+
+    <!-- External script -->
+    <script src="script.js"></script>
+</body>
+</html>

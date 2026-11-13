@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Training Courses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Training Courses Management System</h1>
+        <p>Create Your Account and Start Learning</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html" class="active">Sign Up</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- Registration Form -->
+        <section>
+            <h2>Create a New Account</h2>
+
+            <!-- Image with image map: click the image to open About Us -->
+            <img src="images/home.jpg" alt="Training Courses - click to open About Us"
+                 class="map-img" width="400" height="250" usemap="#aboutMap">
+            <map name="aboutMap">
+                <area shape="rect" coords="0,0,400,250" href="about.html" alt="About Us">
+            </map>
+
+            <!-- novalidate: validation is done by script.js -->
+            <form id="signupForm" action="#" method="post" onsubmit="return validateSignup()" novalidate>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"
+                           autocomplete="name">
+                    <span id="fullnameError" class="error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email"
+                           autocomplete="email">
+                    <span id="emailError" class="error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password"
+                           autocomplete="new-password">
+                    <span id="passwordError" class="error"></span>
+                    <span id="strength"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword"
+                           placeholder="Confirm your password">
+                    <span id="confirmPasswordError" class="error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Choose Your Course:</label>
+                    <select id="course" name="course">
+                        <option value="">Select a Course</option>
+                        <option value="Java">Java Programming</option>
+                        <option value="Python">Python Programming</option>
+                        <option value="Database">Database Management</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                    </select>
+                    <span id="courseError" class="error"></span>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend>Gender:</legend>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male" class="inline-label">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female" class="inline-label">Female</label>
+                    <span id="genderError" class="error"></span>
+                </fieldset>
+
+                <div class="form-group">
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms" class="inline-label">I agree to the Terms and Conditions</label>
+                    <span id="termsError" class="error"></span>
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+
+            </form>
+
+            <p>Already have an account?
+                <a href="login.html">Login Here</a>
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Training Courses Management System</p>
+        <p>All Rights Reserved &copy; 2026</p>
+    </footer>
+
+    <!-- Embedded script: password strength meter -->
+    <script>
+        document.getElementById("password").addEventListener("input", function () {
+            var value = this.value;
+            var meter = document.getElementById("strength");
+            var score = 0;
+            if (value.length >= 8) score++;
+            if (/[A-Z]/.test(value)) score++;
+            if (/[0-9]/.test(value)) score++;
+
+            if (value === "") {
+                meter.textContent = "";
+            } else if (score <= 1) {
+                meter.textContent = "Weak";
+                meter.style.color = "red";
+            } else if (score === 2) {
+                meter.textContent = "Medium";
+                meter.style.color = "orange";
+            } else {
+                meter.textContent = "Strong";
+                meter.style.color = "green";
+            }
+        });
+    </script>
+
+    <!-- External script -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+/* ===== General Style ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fb;
+    color: #26344a;
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #102b4e;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Navigation Menu (list-based, sticky, layered above content) ===== */
+nav {
+    background-color: #1e4775;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 25px;
+}
+
+.menu a:hover,
+.menu a.active {
+    background-color: #102b4e;
+}
+
+/* ===== Sections ===== */
+section {
+    padding: 25px;
+    margin: 20px;
+    background-color: white;
+    border: 1px solid #dce5ef;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    scroll-margin-top: 60px; /* keeps the heading visible under the sticky menu */
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ===== Headings ===== */
+h2 {
+    color: #1e4775;
+}
+
+/* ===== Images ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Image used with the image map (fixed size so the map coordinates stay correct) */
+.map-img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid #1e4775;
+}
+
+/* ===== General Classes ===== */
+.center {
+    text-align: center;
+}
+
+.card {
+    border: 1px solid #dce5ef;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn {
+    background-color: #1e4775;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 5px 5px 0;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #102b4e;
+}
+
+/* Element-specific class (applies only to <p>) */
+p.note {
+    font-style: italic;
+    color: #5a6b80;
+}
+
+.quick-links a {
+    margin-right: 10px;
+}
+
+/* ===== Layering (z-index) ===== */
+/* Label layered on top of the featured course image */
+.featured-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.featured-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    background-color: #102b4e;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Floating button always above the page content */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 200;
+    background-color: #102b4e;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    font-weight: bold;
+    padding: 10px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ccd6e0;
+}
+
+th {
+    background-color: #1e4775;
+    color: white;
+}
+
+/* ===== Forms ===== */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccd6e0;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* .form-group is added so this rule beats ".form-group label" */
+.form-group .inline-label {
+    display: inline;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+/* Gender group (fieldset) looks like the other fields */
+fieldset.form-group {
+    border: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+}
+
+fieldset.form-group legend {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+#strength {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.error {
+    display: block;
+    color: #c0392b;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.success {
+    background-color: #e6f6ea;
+    color: #1e7a37;
+    border: 1px solid #1e7a37;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+/* ===== Links ===== */
+a {
+    color: #1e4775;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #102b4e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
